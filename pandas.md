@@ -2,10 +2,11 @@ found here:
 
 http://pbpython.com/categorical-encoding.html
 
-####################################################################
+
 excellent way to make a new column of a column with a string in it:
 ## Create a binary column called 'recipe_in_title' where it's true if the string 'recipe' is in the title
-```df['recipe_in_title'] = df['title'].str.contains('recipe')
+```
+df['recipe_in_title'] = df['title'].str.contains('recipe')
 ```
 awesome way to count nulls in your columns:
 ```
