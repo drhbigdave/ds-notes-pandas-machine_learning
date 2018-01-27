@@ -18,9 +18,12 @@ idea behind supervised data -
 labeled data  - our prediction of the son's height
 unlabeled  data  - the father's height
 
-## Following udemy steps:
-## A little EDA
-* A little UDA
+### Following udemy steps:
+- relevant notebooks:
+Logistic Regression Project Study material - null accuracy.ipynb
+
+#### A little EDA
+
 ```
 df.info()
 df.describe() #for numerical columns
@@ -41,9 +44,24 @@ sns.heatmap(df.corr())
 # or do
 sns.heatmap(df.corr(), annots=True) # this will pass in the corr numbers into the map
 ```
+- various means of investigating correlations
+```
+x = ad_data['Age']
+y = ad_data['Daily Time Spent on Site'] #udemy class looking at what correlates with time on site - only 1 feature here
+sns.jointplot(x=x, y=y, data=ad_data, kind="kde") #shows how the 2 columns data correlates
+```
+- pair plots for the whole df is a nice one stop shop for initial evaluation
+```
+sns.pairplot(ad_data)
+```
 
-* Actual regression
+#### Actual regression: train_test_split, fit, predict
 First thing we need to do is split our data into an x array with the features to train on and a y array containing the target variable
 note: can throw out text/string data as without running NLP linear regression cannot use non-numerical data, obvi you'd keep it if you were going to apply NLP to it.
+
+#### Evaluate
+
+- create X (features) and y (to be predicted)
+
 
 
