@@ -25,6 +25,9 @@ unlabeled  data  - the father's height
 - relevant notebooks:
 Logistic Regression Project Study material - null accuracy.ipynb
 
+Notebook found here, with great details:
+http://www.ritchieng.com/machine-learning-evaluate-classification-model/
+
 #### A little EDA
 
 ```
