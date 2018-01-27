@@ -1,4 +1,5 @@
-Udemy:
+
+
 Supervised learning: labeled data, often historical, used to predict future
 Unsupervised learning: unlabeled data, look for structure in the data
 Reinforcement learning: used for gaming, navigation, robotics, learns by trial and error which actions yield the greatest rewards
