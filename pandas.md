@@ -110,6 +110,23 @@ df.dropna(subset = ['column1']) #####this will remove rows that have a null valu
 df.fillna(0) #####value is default so this replaces all NaNs with 0
 df['column1'].fillna(unk)
 
+df.drop('Row_or_column', axis 0 or 1 or rows or columns)
+
+df.pop() #removes a column, create a variable with it to save it to its own series
+
+del df('column1') #deletes a columns
+
+df.sample() #returns a row(s) at random
+
+#2 ways to return a new df filtered on some value
+mask = df['col1'] == 'some value'
+df[mask]
+
+#or
+
+df.where(mask) #accepts a boolean series, returns all non-True values as Nan
+
+
 df.column_name.unique() #####returns an array of the unique values
 len(df.column_name.unique()) #####returns number of unique items
 df.colname.nunique() #####returns number of unique values in the specified column, includes dropna = True by default, thus doesn't count null values unless you set it to False
