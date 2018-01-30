@@ -94,7 +94,17 @@ pd.read_csv('file.csv').to_dict() #####imports (a series presumably, to a dict)
 
 ##### DataFrames****
 
-df only methods:
+##### EDA and Cleanup
+- determine the totals of a categorical column, here content rating
+```
+movies.content_rating.value_counts().sort_index()
+- take the totals from the above sort and visualize them:
+```
+movies.content_rating.value_counts().sort_index().plot(kind='barh', figsize=(15, 5), use_index='True')
+plt.ylabel('Movie Rating');
+plt.xlabel('Number of Movies');
+plt.title('Ratings');
+```
 ```
 df.axis #####both df.index and df.columns
 df.columns
@@ -126,6 +136,7 @@ df[mask]
 
 df.where(mask) #accepts a boolean series, returns all non-True values as Nan
 
+df.numeric_col.agg(['min', 'max']) #returns the min and max value in the column #eda
 
 df.column_name.unique() #####returns an array of the unique values
 len(df.column_name.unique()) #####returns number of unique items
@@ -219,3 +230,27 @@ df.loc['name_of_an-index_postion', 'occupation'] #####would return the value of 
 ```
 ##### read_csv for tsv or others:
 https://stackoverflow.com/questions/45551324/dynamodb-pipe-object-to-pandas-dataframe
+
+### Visualizations
+- simple histogram with 1 dimension:
+
+```
+movies.duration.plot(kind='hist', figsize=(15, 5), bins=50)
+plt.xlabel('duration');
+plt.ylabel('minutes');
+plt.title('Duration');
+```
+
+- same data, but with boxplot:
+```
+movies.duration.plot(kind='box', figsize=(15, 5))
+plt.xlabel('duration');
+plt.ylabel('minutes');
+plt.title('Duration');
+```
+
+
+
+
+
+
