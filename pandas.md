@@ -102,13 +102,17 @@ print(movies[movies.duration < 120].star_rating.mean())
 print(movies[movies.duration > 120].star_rating.mean())
 ```
 
-- change values with map() and replace()
+- change values with map() and replace() and .ix()
 ```
 #change all values at once with map, if a value doesn't meet the criteria, it returns a NaN, not good generally
 "data['IsLarge'] = data.Size.map({'small':0, 'large':1})
 
 #to change some values and leave others use replace:
 movies.replace(to_replace=['NOT RATED','APPROVED','PASSED','GP'], value='UNRATED', inplace=True)
+
+#from the udemy bond exercise, sect 5 lect 75. 
+bond.ix['Dr. No', 'Actor'] = 'Sean Connery' #finds the row for the Dr. No movie w/ Sean C
+bond.ix['Dr. No', ['Box Office', 'Budget', 'Actor Salary']] = [448000, 1600, 5000000] #change the values to the ones specified
 ```
 
 
@@ -185,7 +189,13 @@ df.drop('row_value_or_numeric_index#####)
 df.pop('row_or_col_value) #####removes it but you can save that series or row by creating and object with it; doesn't have inplace but performs it as if it is inplace = True
 del df['column_name']
 ```
-##### Filtering**** 
+##### Filtering and Sorting *** 
+- groupby one column and find the highest value in each group 
+```
+movies.sort_values('star_rating', ascending=False).groupby('genre').title.first()
+movies.groupby('genre').title.first()   # equivalent, since DataFrame is already sorted by star rating for imdb dataset
+```
+
 ```
 fnl[fnl['item_name'].str.contains('Chips')] #####str.contains() is cool, try also "startswith"
 filtering returns boolean values that let you filter out things you need to.
@@ -253,7 +263,21 @@ df.loc['name_of_an-index_postion', 'occupation'] #####would return the value of 
 https://stackoverflow.com/questions/45551324/dynamodb-pipe-object-to-pandas-dataframe
 
 ### Visualizations
-- simple histogram with 1 dimension:
+- pandas plot is ambiguous at times, this example you can see a bit of a relationship, but mostly a blob:
+```
+movies.plot(kind='scatter', x='duration', y='star_rating',figsize=(10, 6))
+```
+- seaborn gives you a nice regression line if you want:
+```
+sns.regplot(x=movies['duration'], y=movies['star_rating'])
+
+sns.regplot(x=df["sepal_length"], y=df["sepal_width"], fit_reg=False) #without regression fit
+
+```
+
+
+
+- simple histogram with 1 dimension, shows the distribution:
 
 ```
 movies.duration.plot(kind='hist', figsize=(15, 5), bins=50)
