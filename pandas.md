@@ -94,10 +94,12 @@ pd.read_csv('file.csv').to_dict() #####imports (a series presumably, to a dict)
 
 ##### DataFrames****
 
-##### EDA and Cleanup
+#### EDA and Cleanup
 - determine the totals of a categorical column, here content rating
+
 ```
 movies.content_rating.value_counts().sort_index()
+```
 - take the totals from the above sort and visualize them:
 ```
 movies.content_rating.value_counts().sort_index().plot(kind='barh', figsize=(15, 5), use_index='True')
