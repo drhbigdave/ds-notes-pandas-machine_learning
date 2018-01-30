@@ -129,15 +129,16 @@ df.pop() #removes a column, create a variable with it to save it to its own seri
 del df('column1') #deletes a columns
 
 df.sample() #returns a row(s) at random
-
+```
 #2 ways to return a new df filtered on some value
+```
 mask = df['col1'] == 'some value'
 df[mask]
-
+```
 #or
-
+```
 df.where(mask) #accepts a boolean series, returns all non-True values as Nan
-
+```
 df.numeric_col.agg(['min', 'max']) #returns the min and max value in the column #eda
 
 df.column_name.unique() #####returns an array of the unique values
