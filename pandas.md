@@ -95,6 +95,23 @@ pd.read_csv('file.csv').to_dict() #####imports (a series presumably, to a dict)
 ##### DataFrames****
 
 #### EDA and Cleanup
+- filter with a comparision operator, then take perform a function/method -  the arithmatic mean of numeric column as per the filter, 
+here printing rather than saving anywhere:
+```
+print(movies[movies.duration < 120].star_rating.mean())
+print(movies[movies.duration > 120].star_rating.mean())
+```
+
+- change values with map() and replace()
+```
+#change all values at once with map, if a value doesn't meet the criteria, it returns a NaN, not good generally
+"data['IsLarge'] = data.Size.map({'small':0, 'large':1})
+
+#to change some values and leave others use replace:
+movies.replace(to_replace=['NOT RATED','APPROVED','PASSED','GP'], value='UNRATED', inplace=True)
+```
+
+
 - determine the totals of a categorical column, here content rating
 
 ```
@@ -138,6 +155,7 @@ df[mask]
 #or
 ```
 df.where(mask) #accepts a boolean series, returns all non-True values as Nan
+```
 ```
 df.numeric_col.agg(['min', 'max']) #returns the min and max value in the column #eda
 
