@@ -14,6 +14,19 @@ In machine learning and pattern recognition, a feature is an individual measurab
 
 - classification - In machine learning and statistics, classification is the problem of identifying to which of a set of categories (sub-populations) a new observation belongs, on the basis of a training set of data containing observations (or instances) whose category membership is known.
 
+
+- 2 types of machine learning: supervised, unsupervised
+
 - Supervised learning: labeled data, often historical, used to predict future
-- Unsupervised learning: unlabeled data, look for structure in the data
+- supervised: each observation (row of data) came with one or more labels, either categorical variables (classes) or measurements (regression)
+
+
+- Unsupervised learning: unlabeled data, look for- extract structure in the data
+-- example: segment grocery store shoppers into clusters that exhibit similar behaviors
+-- goal is 'representation'
+-- Unsupervised learning has a different goal: feature discovery
+-- Clustering is a common and fundamental example of unsupervised learning
+-- Clustering algorithms try to find meaningful groups within data
+
+
 - Reinforcement learning: used for gaming, navigation, robotics, learns by trial and error which actions yield the greatest rewards
