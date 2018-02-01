@@ -27,6 +27,33 @@ In machine learning and pattern recognition, a feature is an individual measurab
 * Unsupervised learning has a different goal: feature discovery
 * Clustering is a common and fundamental example of unsupervised learning
 * Clustering algorithms try to find meaningful groups within data
+* looking for similar sized clusters
+* use clustering on population based data to see if there is a discrete cluster I hadn't seen/known before
+* find a cluster, investigate its usefullness as a feature
+##### clustering algos (we used)
+k-means
+dbcluster - density based spatial clustering of applications with noise
+*2 parameters: Epsilon and 
+Two parameters:
+min_samples: specifies how many neighbors a point should have to be included into a cluster.
+Epsilon (eps): specifies how close points should be to each other to be considered a part of a cluster; 
 
+Clustering with Scikit-Learn-Solutions.ipynb
+Clustering_Drinks_Solution.ipynb
 
 - Reinforcement learning: used for gaming, navigation, robotics, learns by trial and error which actions yield the greatest rewards
+
+#### References and links
+http://www.sthda.com/english/wiki/dbscan-density-based-clustering-for-discovering-clusters-in-large-datasets-with-noise-unsupervised-machine-learning
+
+http://www.ritchieng.com/machine-learning-evaluate-classification-model/
+
+https://python-graph-gallery.com/
+
+http://setosa.io/ev/ordinary-least-squares-regression/
+
+http://scikit-learn.org/stable/modules/clustering.html#adjusted-rand-index
+
+https://www.reddit.com/r/learnprogramming/comments/379vwn/visually_learning_algorithms/
+
+http://setosa.io/ev/ordinary-least-squares-regression/

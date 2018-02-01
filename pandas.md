@@ -190,6 +190,12 @@ df.pop('row_or_col_value) #####removes it but you can save that series or row by
 del df['column_name']
 ```
 ##### Filtering and Sorting *** 
+- groupby a column, but filter out those that have a count greater less than or equal to 10 in this case:
+```
+new_df = movies.groupby('genre').filter(lambda x: len(x) >=10)
+#then you can perform actions on that limited df, like getting the mean
+new_df.groupby('genre').mean()
+
 - groupby one column and find the highest value in each group 
 ```
 movies.sort_values('star_rating', ascending=False).groupby('genre').title.first()
@@ -292,6 +298,23 @@ movies.duration.plot(kind='box', figsize=(15, 5))
 plt.xlabel('duration');
 plt.ylabel('minutes');
 plt.title('Duration');
+```
+https://python-graph-gallery.com/
+
+Pandas S13L169
+
+change high stock price to category:
+
+```
+def custom_round(stock_price):
+    return int(stock_price / 100) * 100 #int removes decimal, makes anything less than 100 = 0, 100 - 199 = 100 and so on
+
+ df['high'].apply(custom_round).value_counts().sort_index() 
+
+df['high'].apply(custom_round).nunique() #take this unique value and use it for the # of bins
+
+df['high'].apply(custom_round).plot(kind = 'hist', bins = 9)
+
 ```
 
 
