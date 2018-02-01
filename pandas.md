@@ -192,10 +192,14 @@ del df['column_name']
 ##### Filtering and Sorting *** 
 - groupby a column, but filter out those that have a count greater less than or equal to 10 in this case:
 ```
-new_df = movies.groupby('genre').filter(lambda x: len(x) >=10)
+new_df = movies.groupby('genre').filter(lambda x: len(x) >=10) 
 #then you can perform actions on that limited df, like getting the mean
 new_df.groupby('genre').mean()
 
+#do the same thing without the lambda len function:
+top_10 = ['Drama','Comedy','Action','Crime','Biography','Adventure','Animation','Horror','Mystery']
+movies[movies['genre'].isin(top_10)].groupby('genre')['star_rating'].mean()
+```
 - groupby one column and find the highest value in each group 
 ```
 movies.sort_values('star_rating', ascending=False).groupby('genre').title.first()
