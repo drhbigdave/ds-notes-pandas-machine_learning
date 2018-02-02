@@ -195,6 +195,11 @@ df.pop('row_or_col_value) #####removes it but you can save that series or row by
 del df['column_name']
 ```
 ##### Filtering and Sorting *** 
+- resample is much like groupby for time series data
+```
+data['Sales'].resample('D').mean().autocorr(lag=364)
+```
+
 - groupby a column, but filter out those that have a count greater less than or equal to 10 in this case:
 ```
 new_df = movies.groupby('genre').filter(lambda x: len(x) >=10) 
@@ -328,7 +333,18 @@ df['high'].apply(custom_round).nunique() #take this unique value and use it for 
 df['high'].apply(custom_round).plot(kind = 'hist', bins = 9)
 
 ```
+- 2 box plots, comparing whether a SchoolHoliday affects sales; SchoolHoliday is binary, factorplot seems to realize this
+```
+import seaborn as sb
+%matplotlib inline
 
+sb.factorplot(
+    x='SchoolHoliday',
+    y='Sales',
+    data=store1_data, 
+    kind='box'
+)
+```
 
 
 
