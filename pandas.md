@@ -95,6 +95,11 @@ pd.read_csv('file.csv').to_dict() #####imports (a series presumably, to a dict)
 ##### DataFrames****
 
 #### EDA and Cleanup
+- **Capture the process for doing a for loop for things like k number or autocorr lag
+- **Capture resample function
+- **Capture rolling_mean function
+some of ^ covered in feb 1 slide deck
+
 - filter with a comparision operator, then take perform a function/method -  the arithmatic mean of numeric column as per the filter, 
 here printing rather than saving anywhere:
 ```
@@ -284,7 +289,8 @@ sns.regplot(x=movies['duration'], y=movies['star_rating'])
 sns.regplot(x=df["sepal_length"], y=df["sepal_width"], fit_reg=False) #without regression fit
 
 ```
-
+Visualize the distribution of a dataset:
+https://seaborn.pydata.org/tutorial/distributions.html
 
 
 - simple histogram with 1 dimension, shows the distribution:
