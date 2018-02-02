@@ -278,6 +278,9 @@ df.loc['name_of_an-index_postion', 'occupation'] #####would return the value of 
 https://stackoverflow.com/questions/45551324/dynamodb-pipe-object-to-pandas-dataframe
 
 ### Visualizations
+- Excellent site on python visualizations, grouping them by distribution, correlation, ranking and more:
+https://python-graph-gallery.com/
+
 - pandas plot is ambiguous at times, this example you can see a bit of a relationship, but mostly a blob:
 ```
 movies.plot(kind='scatter', x='duration', y='star_rating',figsize=(10, 6))
@@ -309,7 +312,6 @@ plt.xlabel('duration');
 plt.ylabel('minutes');
 plt.title('Duration');
 ```
-https://python-graph-gallery.com/
 
 Pandas S13L169
 
