@@ -100,6 +100,15 @@ pd.read_csv('file.csv').to_dict() #####imports (a series presumably, to a dict)
 - **Capture rolling_mean function
 some of ^ covered in feb 1 slide deck
 
+##### Import stuff
+- import a list of text messages
+ read_csv for tsv or others:
+https://stackoverflow.com/questions/45551324/dynamodb-pipe-object-to-pandas-dataframe
+
+```
+df = pd.read_csv('smsspamcollection/SMSSpamCollection', sep='\t',names=(['label', 'messages']))
+```
+
 - filter with a comparision operator, then take perform a function/method -  the arithmatic mean of numeric column as per the filter, 
 here printing rather than saving anywhere:
 ```
@@ -199,6 +208,10 @@ del df['column_name']
 ```
 data['Sales'].resample('D').mean().autocorr(lag=364)
 ```
+- an excellent example of using groupby is in the NLP drh v2.ipynb. Remember groupby creates a df groupby object then you need to do something with it:
+```
+messages.groupby('column').describe()
+```
 
 - groupby a column, but filter out those that have a count greater less than or equal to 10 in this case:
 ```
@@ -279,8 +292,23 @@ df.ix[] can mix and match numeric index or label
 ```
 df.loc['name_of_an-index_postion', 'occupation'] #####would return the value of the occupation column in the name you found
 ```
-##### read_csv for tsv or others:
-https://stackoverflow.com/questions/45551324/dynamodb-pipe-object-to-pandas-dataframe
+- you can return an entire value by itself when it is being truncated when returned with the whole df or row:
+```
+df[df['mess_len']==910] #this returns the row with a len of 910 we find earlier
+df[df['mess_len']==910]['messages'].iloc[0] #now it returns the value in the messages col in the 0 position index (it's the only row)
+```
+
+
+### feature engineering
+- to create a column with the length of a text column
+```
+df['new_col'] = df.messages.apply(len)
+```
+
+- the join method, here combining a list into a single string, whatever is in the '' is inserted into the new object
+```
+nopunc = ''.join(nopunc) #nopunc took out the punctuation of a string and left each letter and space in a list, now it is a string again
+```
 
 ### Visualizations
 - Excellent site on python visualizations, grouping them by distribution, correlation, ranking and more:
@@ -344,6 +372,10 @@ sb.factorplot(
     data=store1_data, 
     kind='box'
 )
+```
+- with a categorical col of 2 values, split the hist, kind of groupby, into each of the category values; creating a graph of each value for another feature:
+```
+df.hist(column='mess_len', by='label', bins=60, figsize=(12,5))
 ```
 
 
