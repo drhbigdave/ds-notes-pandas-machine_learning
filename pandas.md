@@ -239,6 +239,10 @@ df[mask & mask2]
 mask = df['column'].isin(['value1', 'value2', 'value3']) to filter on several values, can compare to series from another dataframe
 df[mask]
 ```
+OR with out creating a mask
+```
+alldata[(alldata[IBRD] !=0) | (alldata[IMF] !=0)]
+```
 
 ##### filter on the nulls:
 ```

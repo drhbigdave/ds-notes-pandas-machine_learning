@@ -44,7 +44,7 @@ nums.remove(31)
 nums[4] # returns index #4 value
 
 to increment the value 1
-```
+
 found['e'] = += 1
 ```
 ------------------------------------------------------------------------------------
@@ -69,3 +69,25 @@ grab the csv's from athena work and try doing the commands here?
 *args - non key worded variable length argument list
 
 "That’s a great question. On the face of things, you don’t know. However, there’s a well-established convention in the Python programming community to name functions using lowercase letters (with underscores for emphasis), while CamelCase (concatenated words, capitalized) is used to name classes. Following this convention, it should be clear that count_from_by() is a function call, whereas CountFromBy() creates an object. All is fine just so long as everyone follows this convention, and you’re strongly encouraged to do so, too. However, if you ignore this suggestion, all bets are off, and most Python programmers will likely avoid you and your code."
+
+#### Read json exercise:
+```
+with open("training.json") as datafile:
+    data = json.load(datafile)
+```
+dataframe = pd.DataFrame(data)
+^ the json fails validation tests and this
+fails this attempt to add a comma 
+```
+with open('temp.txt') as f:
+    content = f.read()
+
+pd.read_json('[' + content.replace('}\n', '},') + ']')
+```
+no bueno - formatting isn't friendly
+```
+filename = "../2_dataset/yelp.json"
+with open(filename, 'r') as f:
+    objects = json.load(f)
+    columns = list(objects)
+ ```
