@@ -10,6 +10,7 @@ L16-Demo has Time Series modeling L16-Demo.ipynb and with Walmart starter-code-1
 *do resample autocorr on wellness data to see if there is a trend; "predict for the individual or the population"
 
 online time series arma exercise:
+
 https://machinelearningmastery.com/arima-for-time-series-forecasting-with-python/
 
 "comprehensive mapping of failure is a finding"
