@@ -6,8 +6,10 @@ do cement understanding of "cross-validation"
 1. AutoRegressive (AR) Model
 2. Moving average (MA) Model
 3. ARMA (combines AR and MA)
+
 L16-Demo has Time Series modeling L16-Demo.ipynb and with Walmart starter-code-16.ipynb
-*do resample autocorr on wellness data to see if there is a trend; "predict for the individual or the population"
+
+* *do resample autocorr on wellness data to see if there is a trend; "predict for the individual or the population"
 
 online time series arma exercise:
 
