@@ -1,6 +1,10 @@
+a better cheatsheet than what you see on this page is found here:
+https://www.dataquest.io/blog/pandas-cheat-sheet/
+
 found here:
 
 http://pbpython.com/categorical-encoding.html
+
 
 
 excellent way to make a new column of a column with a string in it:

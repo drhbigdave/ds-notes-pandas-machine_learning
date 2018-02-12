@@ -43,3 +43,6 @@ enter image description here
 - Logistic regression is just the opposite. Using the logistic loss function causes large errors to be penalized to an asymptotically constant.
 
 Consider linear regression on categorical {0, 1} outcomes to see why this is a problem. If your model predicts the outcome is 38, when the truth is 1, you've lost nothing. Linear regression would try to reduce that 38, logistic wouldn't (as much)2.
+
+
+

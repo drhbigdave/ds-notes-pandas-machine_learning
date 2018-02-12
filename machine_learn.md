@@ -147,7 +147,11 @@ Classification accuracy is the easiest classification metric to understand
 - And, it does not tell you what "types" of errors your classifier is making
 
 
+# Evaluate accuracy of model on test set
+print("Accuracy: %0.3f" % dt.score(X_test, y_test))
 
+# Evaluate ROC AUC score of model on test set
+print('ROC AUC: %0.3f' % roc_auc_score(y_test, dt.predict_proba(X_test)[:,1]))
 
 
 

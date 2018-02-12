@@ -1,5 +1,42 @@
 ## eventually move the notes into the relevant topics markdown file
 
+- Feb 8 Class
+Scaling
+
+Normailizing is getting all of our values between 0 and 1
+
+Standardization is getting all the values around zero and 
+
+advanced_sklearn.ipynb - GA with scaled data, KNeighborsClassifier,StandardScaler - good classification example
+
+StandardScalar "good for anything with classification"
+
+grid_search.ipynb GA - cross_val_score,GridSearchCV, RandomizedSearchCV - good pipeline
+
+sklearn info:
+http://scikit-learn.org/stable/modules/cross_validation.html
+
+- KNN accuracy on original data
+```
+knn = KNeighborsClassifier(n_neighbors=3)
+knn.fit(X_train, y_train)
+y_pred_class = knn.predict(X_test)
+
+from sklearn import metrics
+print(metrics.accuracy_score(y_test, y_pred_class))
+```
+- KNN accuracy on scaled data
+```
+knn.fit(X_train_scaled, y_train)
+y_pred_class = knn.predict(X_test_scaled)
+
+print(metrics.accuracy_score(y_test, y_pred_class)) 
+```
+
+
+
+
+
 - feature = synonmous with attribute, property or field;  measurable information about something; a model's inputs
 In machine learning and pattern recognition, a feature is an individual measurable property or characteristic of a phenomenon being observed. Choosing informative, discriminating and independent features is a crucial step for effective algorithms in pattern recognition, classification and regression.
 
